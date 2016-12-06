@@ -25,14 +25,14 @@
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "^3.4.0"
   },
-  "_release": "7e29dd110d",
+  "_release": "a51896c17d",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "7e29dd110d9229a3dc7bfcabbb7683774aadf3d0"
+    "commit": "a51896c17d7ac86b3f1358f5fe5de11e7b81b355"
   },
   "_source": "https://github.com/mrpharderwijk/beautify-json.git",
   "_target": "*",
-  "_originalSource": "mrpharderwijk/beautify-json",
+  "_originalSource": "beautify-json",
   "_direct": true
 }
