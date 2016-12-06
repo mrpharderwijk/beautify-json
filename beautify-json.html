@@ -10,6 +10,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="bower_components/polymer/polymer.html">
 
+<!--
+A Polymer 1.2 wrapper element for google tag manager.
+
+Example:
+
+    <beautify-json output="{ 'key' : 'value' }" highlight></beautify-json>
+
+@demo demo/index.html
+-->
 <dom-module id="beautify-json">
   <template>
     <style>
@@ -17,8 +26,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         border: 1px solid red;
       }
-      
-      #output {
+        
+      .default {
+        outline: 1px solid #ccc;
+        margin: 5px; 
+        padding: 10px 20px;
+      }
+
+      .highlighted {
         background: #212121;
         color: #89ddff;
         outline: 1px solid #ccc;
@@ -40,34 +55,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .boolean { color: #f78c6c; }
       .null { color: #f78c6c; }
     </style>
-    <pre id="output">{{ output }}</pre>
+    <pre id="output" class$="{{ elClass }}">{{ output }}</pre>
   </template>
 
   <script>
     Polymer({
       is: 'beautify-json',
       properties: {
+        /**
+         * `highlight` show the json in a dark syntax
+         * highlighting theme
+         */
+        highlight: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * `output` is the object or array that you
+         * want to output. If not given, we show a default
+         * example json
+         */
         output: {
-          type: String,
-          observer: '_htmlChanged',
-          value: function() {
-            return {
-              key: 'value',
-              'array': [
-                'item1', 'item2'
-              ]
-            }
-          }
+          type: Object,
+          observer: '_htmlChanged'
         }
       },
 
-      _htmlChanged: function(value) {
-        var stringified = JSON.stringify(value, undefined, 2);
-        var syntaxed = this.syntaxHighlight(stringified);
-        Polymer.dom(this.$.output).innerHTML = syntaxed;
+      ready: function() {
+        this.elClass = (this.highlight) ? 'highlighted' : 'default';
       },
 
-      syntaxHighlight: function(json) {
+      _htmlChanged: function() {
+        var unquote = this.output.replace(/['"]+/g, '"');
+        var parsed = JSON.parse(unquote);
+        var unstyled = JSON.stringify(parsed, undefined, 2);
+        var output = ( this.highlight ) ? this._syntaxHighlight(unstyled) : unstyled;
+
+        Polymer.dom(this.$.output).innerHTML = output;
+      },
+
+      _syntaxHighlight: function(json) {
         json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
             var cls = 'number';
