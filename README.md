@@ -16,12 +16,19 @@ Import it in your code
 ```
 
 ## Usage
-To retrieve all pages use the following markup:
+To show the json output without syntax highlighting (where JSON_OBJ is your json object):
+
+```html
+  <beautify-json
+    output="JSON_OBJ"></beautify-json>
+```
+
+To show the json output with syntax highlighting, use the following markup:
 
 ```html
   <beautify-json
     output="JSON_OBJ"
-    highlight="TRUE / FALSE"></beautify-json>
+    highlight></beautify-json>
 ```
 
 ## Playing With Your Element
