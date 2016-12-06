@@ -1,4 +1,4 @@
-# &lt;wp-collect-menu&gt;
+# &lt;pretty-json&gt;
 
 Polymer 1.2 element element to output json in a 'pretty' way.
 
@@ -20,7 +20,8 @@ To retrieve all pages use the following markup:
 
 ```html
   <pretty-json
-    input-data="JSON_OBJ"></pretty-json>
+    output="JSON_OBJ"
+    highlight="TRUE / FALSE"></pretty-json>
 ```
 
 ## Playing With Your Element
