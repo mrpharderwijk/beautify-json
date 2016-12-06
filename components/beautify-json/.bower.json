@@ -25,11 +25,11 @@
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "^3.4.0"
   },
-  "_release": "c28ec12efb",
+  "_release": "7e29dd110d",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c28ec12efb17339b0a437c7d617a2d99173cbc39"
+    "commit": "7e29dd110d9229a3dc7bfcabbb7683774aadf3d0"
   },
   "_source": "https://github.com/mrpharderwijk/beautify-json.git",
   "_target": "*",
