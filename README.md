@@ -1,27 +1,27 @@
-# &lt;pretty-json&gt;
+# &lt;beautify-json&gt;
 
-Polymer 1.2 element element to output json in a 'pretty' way.
+Polymer 1.2 element element to output json in a human readable way.
 
-Check out the [demo](http://mrpharderwijk.github.io/pretty-json/)
+Check out the [demo](http://mrpharderwijk.github.io/beautify-json/)
 
 ## Setup
-Install with bower or [download the zip](https://github.com/mrpharderwijk/pretty-json/archive/v1.0.0.zip)
+Install with bower or [download the zip](https://github.com/mrpharderwijk/beautify-json/archive/v1.0.0.zip)
 ```bash
-bower install --save mrpharderwijk/pretty-json
+bower install --save mrpharderwijk/beautify-json
 ```
 Import it in your code
 ```html
 <!-- for relative paths -->
-<link rel="import"href="../bower_components/pretty-json/pretty-json.html">
+<link rel="import"href="../bower_components/beautify-json/beautify-json.html">
 ```
 
 ## Usage
 To retrieve all pages use the following markup:
 
 ```html
-  <pretty-json
+  <beautify-json
     output="JSON_OBJ"
-    highlight="TRUE / FALSE"></pretty-json>
+    highlight="TRUE / FALSE"></beautify-json>
 ```
 
 ## Playing With Your Element
@@ -37,7 +37,7 @@ And you can run it via:
     polyserve
 
 Once running, you can preview your element at
-`http://localhost:8080/components/pretty-json/`.
+`http://localhost:8080/components/beautify-json/`.
 
 ## Contribute
 Feel free to extend it or propose new functionality
