@@ -1,6 +1,5 @@
 {
   "name": "beautify-json",
-  "version": "1.0.0",
   "authors": [
     "Marnix Harderwijk <marnix@littlebigagency.com>"
   ],
@@ -20,11 +19,20 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.0",
-    "beautify-json": "mrpharderwijk/beautify-json"
+    "polymer": "Polymer/polymer#^1.2.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "^3.4.0"
-  }
+  },
+  "_release": "c28ec12efb",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c28ec12efb17339b0a437c7d617a2d99173cbc39"
+  },
+  "_source": "https://github.com/mrpharderwijk/beautify-json.git",
+  "_target": "*",
+  "_originalSource": "mrpharderwijk/beautify-json",
+  "_direct": true
 }
