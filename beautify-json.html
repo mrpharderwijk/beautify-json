@@ -88,11 +88,11 @@ Example:
       },
 
       _htmlChanged: function() {
-        var unquote = this.output.replace(/['"]+/g, '"');
-        var parsed = JSON.parse(unquote);
-        var unstyled = JSON.stringify(parsed, undefined, 2);
-        var output = ( this.highlight ) ? this._syntaxHighlight(unstyled) : unstyled;
-        Polymer.dom(this.$.output).innerHTML = output;
+        if (typeof this.output === 'object') {
+          var unstyled = JSON.stringify(this.output, undefined, 2);
+          var output = ( this.highlight ) ? this._syntaxHighlight(unstyled) : unstyled;
+          Polymer.dom(this.$.output).innerHTML = output;
+        }
       },
 
       _syntaxHighlight: function(json) {
