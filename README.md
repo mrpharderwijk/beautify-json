@@ -12,7 +12,7 @@ bower install --save mrpharderwijk/beautify-json
 Import it in your code
 ```html
 <!-- for relative paths -->
-<link rel="import"href="../bower_components/beautify-json/beautify-json.html">
+<link rel="import" href="../bower_components/beautify-json/beautify-json.html">
 ```
 
 ## Usage
