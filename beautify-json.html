@@ -79,7 +79,7 @@ Example:
          */
         output: {
           type: Object,
-          observer: '_htmlChanged'
+          observer: '_jsonChanged'
         }
       },
 
@@ -87,7 +87,7 @@ Example:
         this.elClass = (this.highlight) ? 'highlighted' : 'default';
       },
 
-      _htmlChanged: function() {
+      _jsonChanged: function() {
         if (typeof this.output === 'object') {
           var unstyled = JSON.stringify(this.output, undefined, 2);
           var output = ( this.highlight ) ? this._syntaxHighlight(unstyled) : unstyled;
